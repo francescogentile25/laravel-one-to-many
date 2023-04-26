@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->unsignedBigInteger('type_id')->nullabe()->after('id'); //add coloumn
+            $table->unsignedBigInteger('type_id')->nullable()->after('id'); //add coloumn
             $table->foreign('type_id')->references('id')->on('types'); // relaption external key and primary key
         });
     }
