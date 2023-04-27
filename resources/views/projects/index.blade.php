@@ -37,6 +37,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Link</th>
+                    <th>Categoria</th>
                     <th>Slug</th>
                     <th>Data creazione</th>
                     <th>Data modifica</th>
@@ -52,6 +53,7 @@
                         </td>
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->website_link }}</td>
+                        <td>{{ $project->type ? $project->type->name : '-' }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>{{ $project->created_at->format('d/m/Y') }}</td>
                         <td>{{ $project->updated_at->format('d/m/Y') }}</td>
