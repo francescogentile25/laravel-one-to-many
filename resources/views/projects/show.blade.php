@@ -3,8 +3,15 @@
     <div class="container">
         <div class="d-flex align-items-center">
             <div class="me-auto">
-                <h1>{{ $project->title }}</h1>
+                <h1>{{ $project->title }}
+                    @if ($project->type)
+                        <span class="badge bg-secondary">{{ $project->type->name }}</span>
+                    @else
+                        <span class="badge bg-secondary">Nessuna categoria</span>
+                    @endif
+                </h1>
                 <p>/{{ $project->slug }}</p>
+                <p>Tipo: </p>
             </div>
 
             <div class="d-flex">
