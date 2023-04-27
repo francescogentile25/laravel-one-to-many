@@ -31,4 +31,20 @@
             {{ $project->description }}
         </p>
     </div>
+    <div class="container">
+        <h3>Articoli correlati</h3>
+        @if ($project->type)
+            <ul>
+                @foreach ($project->type->projects as $related_project)
+                    <li>
+                        <a href="{{ route('projects.show', $related_project) }}">
+                            {{ $related_project->title }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @else
+            nessun articolo correlato
+        @endif
+    </div>
 @endsection
